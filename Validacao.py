@@ -4,15 +4,13 @@ def validacao(**kwargs):
         mensagem =mensagem if mensagem[-1]==":" else mensagem+":"
         while True: 
             try:
-                interacao=input(mensagem)
-                interacao=kwargs["tipo"](interacao)
-                return interacao
+                entrada=input(mensagem)
+                entrada=kwargs["tipo"](entrada)
+                return entrada
             except:
                 if kwargs.get("erro") != None:
                     print(kwargs["erro"])
                 else:
-                    print("ERRO")
+                    print(f"Entrada {entrada} inválida ")
     else:
         return None
-        
-    
